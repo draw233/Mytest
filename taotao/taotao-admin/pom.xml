@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.taotao</groupId>
+    <artifactId>taotao-parent</artifactId>
+    <version>1.0.0-RELEASE</version>
+  </parent>
+  <artifactId>taotao-admin</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <description>聚合工程，服务端</description>
+  <modules>
+  	<module>taotao-admin-pojo</module>
+  	<module>taotao-admin-mapper</module>
+  	<module>taotao-admin-interface</module>
+  	<module>taotao-admin-service</module>
+  </modules>
+  
+  <!-- 父工程应加入子工程都会使用的依赖和tomcat插件 -->
+  <!-- 配置依赖 -->
+  <dependencies>
+  	<!-- 单元测试 -->
+  	<!-- 日志 -->
+  	<!-- Apache工具组件-->
+  	<!-- JSON处理工具包-->
+
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-log4j12</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.core</groupId>
+  		<artifactId>jackson-databind</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-lang3</artifactId>
+  	</dependency>
+  </dependencies>
+  
+  <!-- 构建部分 -->
+  <build>
+  	<plugins>
+  		<!-- 配置tomcat插件 -->
+  		<plugin>
+  			<groupId>org.apache.tomcat.maven</groupId>
+  			<artifactId>tomcat7-maven-plugin</artifactId>
+  			<configuration>
+  				<port>9090</port>
+  				<path>/</path>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
