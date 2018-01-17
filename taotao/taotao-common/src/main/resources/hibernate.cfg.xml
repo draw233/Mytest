@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库方�? -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- 显示SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 格式化SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 是否支持自动建表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 当前Session上下�? -->
+		<property name="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</property>
+		<!-- 配置查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- 配置二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 配置缓存提供�? -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+	
+		
+	</session-factory>
+</hibernate-configuration>
